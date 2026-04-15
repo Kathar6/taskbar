@@ -207,6 +207,7 @@ PanelWindow {
 					Layout.preferredWidth: 200
 					textRole: "text"
 					valueRole: "value"
+					currentIndex: MediaService.active_player_index
 					model: {
 						const players = MediaService.getPlayers()
 

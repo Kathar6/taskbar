@@ -11,13 +11,14 @@ Item {
 	height: 100
 	property var audioData: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	property bool can_run: true
+	property string config_path: Qt.resolvedUrl("../../cava_config.conf")
 	Process {
-		command: ["cava", "-p", "/home/katharsis/.config/cava/raw_config"]
+		command: ["cava", "-p", root.config_path.replace("file://", "")]
 		running: root.can_run
 
 		stdout: SplitParser {
 			onRead: data => {
-				let values = data.split(';').filter(x => x !== "")
+				let values = data.trim().split(';').filter(x => x !== "")
 				if (!values.length) return
 				
 				audioData = values.map(Number)

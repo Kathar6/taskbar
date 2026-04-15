@@ -9,18 +9,26 @@ QtObject {
 
 	property int players_count: Mpris.players?.values?.length || 0
 	property MprisPlayer active_player: null
+	property int active_player_index: -1
 
 	function updateActivePlayer() {
 		let current_players = Mpris.players.values
 		if (!current_players?.length) return null
 
 		let new_player = null
-		for (const current_player of current_players) {
-			if (current_player.isPlaying) new_player = current_player
+		let new_player_index = -1
+		current_players.forEach((current_player, index) => {
+			if (!current_player.isPlaying) return
+			new_player = current_player
+			new_player_index = index
+		})
+		if (!new_player) {
+			new_player = current_players[0]
+			new_player_index = 0
 		}
-		if (!new_player) new_player = current_players[0]
 
 		root.active_player = new_player
+		root.active_player_index = new_player_index
 	}
 
 	function formatTime(value) {
