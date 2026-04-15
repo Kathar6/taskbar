@@ -1,0 +1,11 @@
+module qs.ui.organisms
+LeftMenu 1.0 LeftMenu.qml
+
+HyprWorkspaces 1.0 HyprWorkspaces.qml
+StatChips 1.0 StatChips.qml
+BasicStats 1.0 BasicStats.qml
+
+ConfigSliders 1.0 ConfigSliders.qml
+HardwareInfo 1.0 HardwareInfo.qml
+
+CavaPlayer 1.0 CavaPlayer.qml

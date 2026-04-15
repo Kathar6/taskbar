@@ -1,0 +1,5 @@
+module qs.ui.molecules
+StatChip 1.0 StatChip.qml
+Clock 1.0 Clock.qml
+AppFormSlider 1.0 AppFormSlider.qml
+HardwareCard 1.0 HardwareCard.qml

@@ -1,0 +1,5 @@
+module qs.windows
+MainBar 1.0 MainBar.qml
+ConfigPanel 1.0 ConfigPanel.qml
+LogoutPanel 1.0 LogoutPanel.qml
+MediaPlayer 1.0 MediaPlayer.qml
